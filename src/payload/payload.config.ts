@@ -1,6 +1,7 @@
 import { webpackBundler } from '@payloadcms/bundler-webpack' // bundler-import
 import { mongooseAdapter } from '@payloadcms/db-mongodb' // database-adapter-import
 import { payloadCloud } from '@payloadcms/plugin-cloud'
+// import formBuilder from '@payloadcms/plugin-form-builder'
 import nestedDocs from '@payloadcms/plugin-nested-docs'
 import redirects from '@payloadcms/plugin-redirects'
 import seo from '@payloadcms/plugin-seo'
@@ -42,7 +43,6 @@ dotenv.config({
 export default buildConfig({
   admin: {
     user: Users.slug,
-    css: path.resolve(__dirname, '../app/_css/customTheme.scss'),
     bundler: webpackBundler(), // bundler-config
     components: {
       // The `BeforeLogin` component renders a message that you see while logging into your admin panel.
@@ -75,7 +75,9 @@ export default buildConfig({
       }
     },
   },
-  editor: slateEditor({}), // editor-config
+
+
+editor: slateEditor({}), // editor-config
   // database-adapter-config-start
   db: mongooseAdapter({
     url: process.env.DATABASE_URI,
@@ -121,6 +123,7 @@ export default buildConfig({
     },
   ],
   plugins: [
+    // formBuilder({}),
     stripePlugin({
       stripeSecretKey: process.env.STRIPE_SECRET_KEY || '',
       isTestKey: Boolean(process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY),

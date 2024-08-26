@@ -19,6 +19,7 @@ const start = async (): Promise<void> => {
   await payload.init({
     secret: process.env.PAYLOAD_SECRET || '',
     express: app,
+    mongoURL: '',
     onInit: () => {
       payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`)
     },

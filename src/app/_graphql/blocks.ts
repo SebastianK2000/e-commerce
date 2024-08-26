@@ -1,4 +1,4 @@
-import { CATEGORIES } from './categories'
+export const PRODUCT_CATEGORIES = `some value or query`;
 import { LINK_FIELDS } from './link'
 import { MEDIA } from './media'
 import { META } from './meta'
@@ -42,7 +42,7 @@ export const ARCHIVE_BLOCK = `
   introContent
   populateBy
   relationTo
-  ${CATEGORIES}
+  ${PRODUCT_CATEGORIES}
   limit
   selectedDocs {
     relationTo
@@ -52,7 +52,6 @@ export const ARCHIVE_BLOCK = `
         slug
         title
         priceJSON
-        ${META}
       }
     }
   }
@@ -64,7 +63,7 @@ export const ARCHIVE_BLOCK = `
         slug
         title
         priceJSON
-        ${CATEGORIES}
+        ${PRODUCT_CATEGORIES}
         ${META}
       }
     }
