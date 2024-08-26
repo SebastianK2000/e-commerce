@@ -42,6 +42,7 @@ dotenv.config({
 export default buildConfig({
   admin: {
     user: Users.slug,
+    css: path.resolve(__dirname, '../app/_css/customTheme.scss'),
     bundler: webpackBundler(), // bundler-config
     components: {
       // The `BeforeLogin` component renders a message that you see while logging into your admin panel.
