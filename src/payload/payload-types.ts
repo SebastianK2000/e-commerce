@@ -493,7 +493,8 @@ export interface Header {
   createdAt?: string | null
 }
 export interface Footer {
-  id: string
+  id: string,
+  copyright?: string;
   navItems?:
     | {
         link: {
@@ -514,5 +515,4 @@ export interface Footer {
 }
 
 declare module 'payload' {
-  export interface GeneratedTypes extends Config {}
 }
