@@ -3,8 +3,7 @@ import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
-import type { Category } from '../../../payload/payload-types'
-import type { Page } from '../../../payload/payload-types'
+import { Category, Page } from '../../../payload/payload-types'
 import { staticHome } from '../../../payload/seed/home-static'
 import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
@@ -20,6 +19,9 @@ import { generateMeta } from '../../_utilities/generateMeta'
 // See https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
 // If you are not using Payload Cloud then this line can be removed, see `../../../README.md#cache`
 export const dynamic = 'force-dynamic'
+
+import Categories from '../../_components/Categories'
+import Promotion from '../../_components/Promotion'
 
 import classes from './index.module.scss'
 
@@ -64,10 +66,8 @@ export default async function Page({ params: { slug = 'home' } }) {
           <Hero {...hero} />
 
           <Gutter className={classes.home}>
-            <Blocks
-              blocks={layout}
-              disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
-            />
+            <Categories categories={categories} />
+            <Promotion />
           </Gutter>
         </section>
       ) : (

@@ -1,4 +1,4 @@
-export const PRODUCT_CATEGORIES = `some value or query`;
+import { PRODUCT_CATEGORIES } from './categories'
 import { LINK_FIELDS } from './link'
 import { MEDIA } from './media'
 import { META } from './meta'
