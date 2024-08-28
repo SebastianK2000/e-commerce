@@ -4,38 +4,36 @@ const redirects = require('./redirects')
 
 const nextConfig = {
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true,  // Ignoruje błędy TypeScript przy budowaniu
   },
-  reactStrictMode: true,
-  swcMinify: true,
+  reactStrictMode: true,  // Włącza tryb Strict Mode w React
+  swcMinify: true,  // Używa SWC do minifikacji kodu
+
   images: {
     domains: ['localhost', process.env.NEXT_PUBLIC_SERVER_URL]
       .filter(Boolean)
-      .map(url => url.replace(/https?:\/\//, '')),
+      .map(url => url.replace(/https?:\/\//, '')),  // Filtruje i mapuje domeny dla obsługi obrazów
   },
-  redirects,
+
+  redirects,  // Ustawia przekierowania z pliku redirects.js
+
   async headers() {
     const headers = []
 
-    // Prevent search engines from indexing the site if it is not live
-    // This is useful for staging environments before they are ready to go live
-    // To allow robots to crawl the site, use the `NEXT_PUBLIC_IS_LIVE` env variable
-    // You may want to also use this variable to conditionally render any tracking scripts
+    // Blokuje indeksowanie przez wyszukiwarki, jeśli strona nie jest na żywo
     if (!process.env.NEXT_PUBLIC_IS_LIVE) {
       headers.push({
+        source: '/:path*',
         headers: [
           {
             key: 'X-Robots-Tag',
             value: 'noindex',
           },
         ],
-        source: '/:path*',
       })
     }
 
-    // Set the `Content-Security-Policy` header as a security measure to prevent XSS attacks
-    // It works by explicitly whitelisting trusted sources of content for your website
-    // This will block all inline scripts and styles except for those that are allowed
+    // Ustawia nagłówek Content-Security-Policy dla ochrony przed atakami XSS
     headers.push({
       source: '/(.*)',
       headers: [
@@ -47,6 +45,11 @@ const nextConfig = {
     })
 
     return headers
+  },
+
+  // Dodaj poniższy blok, aby upewnić się, że Turbopack nie jest używany
+  experimental: {
+    turboMode: false,  // Wyłącza Turbopack, upewniając się, że używany jest Webpack
   },
 }
 
