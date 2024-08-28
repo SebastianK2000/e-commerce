@@ -4,23 +4,19 @@ const redirects = require('./redirects')
 
 const nextConfig = {
   typescript: {
-    ignoreBuildErrors: true,  // Ignoruje błędy TypeScript przy budowaniu
+    ignoreBuildErrors: true,
   },
-  reactStrictMode: true,  // Włącza tryb Strict Mode w React
-  swcMinify: true,  // Używa SWC do minifikacji kodu
-
+  reactStrictMode: true,
+  swcMinify: true,
   images: {
     domains: ['localhost', process.env.NEXT_PUBLIC_SERVER_URL]
       .filter(Boolean)
-      .map(url => url.replace(/https?:\/\//, '')),  // Filtruje i mapuje domeny dla obsługi obrazów
+      .map(url => url.replace(/https?:\/\//, '')),
   },
-
-  redirects,  // Ustawia przekierowania z pliku redirects.js
-
+  redirects,
   async headers() {
     const headers = []
 
-    // Blokuje indeksowanie przez wyszukiwarki, jeśli strona nie jest na żywo
     if (!process.env.NEXT_PUBLIC_IS_LIVE) {
       headers.push({
         source: '/:path*',
@@ -33,7 +29,6 @@ const nextConfig = {
       })
     }
 
-    // Ustawia nagłówek Content-Security-Policy dla ochrony przed atakami XSS
     headers.push({
       source: '/(.*)',
       headers: [
@@ -45,11 +40,6 @@ const nextConfig = {
     })
 
     return headers
-  },
-
-  // Dodaj poniższy blok, aby upewnić się, że Turbopack nie jest używany
-  experimental: {
-    turboMode: false,  // Wyłącza Turbopack, upewniając się, że używany jest Webpack
   },
 }
 
