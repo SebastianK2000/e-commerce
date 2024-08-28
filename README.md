@@ -1,3 +1,36 @@
+
+
+
+## Link for the aplication: 
+
+https://e-commerce-shop-sebastiank2000.payloadcms.app
+
+## Mobile: 
+
+https://github.com/user-attachments/assets/d32d0ff3-5a20-4ef0-a6dd-c79a72437fc0
+
+
+## Web: 
+
+https://github.com/user-attachments/assets/9a5a2ea1-73ca-43c9-aef7-19a24b52fb66
+
+## Screens of E-commerce shop aplications: 
+
+![Zrzut ekranu 2024-08-28 120449](https://github.com/user-attachments/assets/b111f4d8-1e2f-430d-9f08-4a986f462a87)
+
+![Zrzut ekranu 2024-08-28 120511](https://github.com/user-attachments/assets/8af24082-ed80-4e33-b7b7-fd4171289100)
+
+![Zrzut ekranu 2024-08-28 120542](https://github.com/user-attachments/assets/ff934729-b242-438a-9062-06283e439431)
+
+![Zrzut ekranu 2024-08-28 120605](https://github.com/user-attachments/assets/5e598af9-5931-4038-accb-bfcc59f21a42)
+
+![Zrzut ekranu 2024-08-28 120622](https://github.com/user-attachments/assets/e8888890-8abc-4e38-9ced-f9e4dcae05b6)
+
+![Zrzut ekranu 2024-08-28 120648](https://github.com/user-attachments/assets/50dc0518-6e2b-44d1-b11d-503514ab3ee8)
+
+
+
+
 # Payload E-Commerce Template
 
 This is the official [Payload E-Commerce Template](https://github.com/payloadcms/payload/blob/main/templates/ecommerce). Use it to power e-commerce businesses and online stores of all sizes. This repo includes a fully-working backend, enterprise-grade admin panel, and a beautifully designed, production-ready website.
