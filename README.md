@@ -3,7 +3,7 @@
 ### In developing the application, I used the Payload library, Next.js, the MongoDB database while for the payment system I used Stripe.
 
 
-## Link for the aplication: 
+## Link for the aplication (not active because i lost my free trial for library): 
 
 https://e-commerce-shop-sebastiank2000.payloadcms.app
 
